@@ -1,4 +1,4 @@
-﻿/// <summary>
+/// <summary>
 /// Converts string type of player's input into others. 
 /// </summary>
 public static class TypeConverter
@@ -20,7 +20,7 @@ public static class TypeConverter
                 case TypeCode.String:
                     return input;
                 case TypeCode.Boolean:
-                    if (_canParseBoolean(input, out bool booleanTypeResult)) return booleanTypeResult;
+                    if (_CanParseBoolean(input, out bool booleanTypeResult)) return booleanTypeResult;
                     break;
                 case TypeCode.Int32:
                     if (int.TryParse(input, out int intTypeResult)) return intTypeResult;
@@ -59,7 +59,7 @@ public static class TypeConverter
     /// <param name="input">Player's input.</param>
     /// <param name="result">Thes result of parsing if it was successful.</param>
     /// <returns></returns>
-    private static bool _canParseBoolean(string input, out bool result)
+    private static bool _CanParseBoolean(string input, out bool result)
     {
         result = false;
         if (input.ToLower() == "on")
