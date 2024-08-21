@@ -7,7 +7,7 @@ public static class TypeConverter
 
     public static object Parse(string input, Type targetType)
     {
-        if (input == null || input == "".Trim())
+        if (String.IsNullOrEmpty(input))
         {
             throw new Exception("Type Error: Input variable is null or empty");
         }
@@ -26,10 +26,10 @@ public static class TypeConverter
                     if (int.TryParse(input, out int intTypeResult)) return intTypeResult;
                     break;
                 case TypeCode.Int64:
-                    if (Int64.TryParse(input, out long longTypeResult)) return longTypeResult;
+                    if (long.TryParse(input, out long longTypeResult)) return longTypeResult;
                     break;
                 case TypeCode.Single:
-                    if (Single.TryParse(input, out float floatTypeResult)) return floatTypeResult;
+                    if (float.TryParse(input, out float floatTypeResult)) return floatTypeResult;
                     break;
                 case TypeCode.Double:
                     if (double.TryParse(input, out double doubleTypeResult)) return doubleTypeResult;
